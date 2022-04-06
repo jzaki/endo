@@ -13,6 +13,7 @@ export const parseCjs = async (
   _specifier,
   location,
   _packageLocation,
+  requireResolve,
 ) => {
   const source = textDecoder.decode(bytes);
 
@@ -39,6 +40,7 @@ export const parseCjs = async (
       moduleEnvironmentRecord,
       compartment,
       resolvedImports,
+      requireResolve,
     );
 
     functor(
