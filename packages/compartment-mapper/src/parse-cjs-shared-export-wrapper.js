@@ -42,10 +42,7 @@ export const wrap = (moduleEnvironmentRecord, compartment, resolvedImports) => {
     moduleEnvironmentRecord.default[prop] = value;
   };
 
-  const originalExports = new Proxy(Object.create(null), {
-    get(target, prop) {
-      return moduleEnvironmentRecord.default[prop];
-    },
+  const originalExports = new Proxy(moduleEnvironmentRecord.default, {
     set(_target, prop, value) {
       assignProp(prop, value);
       return true;
@@ -95,7 +92,7 @@ export const wrap = (moduleEnvironmentRecord, compartment, resolvedImports) => {
     // the lexer.
     if (exportsHaveBeenOverwritten) {
       moduleEnvironmentRecord.default = finalExports;
-      keys(moduleEnvironmentRecord.default).forEach(prop => {
+      keys(moduleEnvironmentRecord.default || {}).forEach(prop => {
         if (prop !== 'default')
           moduleEnvironmentRecord[prop] = moduleEnvironmentRecord.default[prop];
       });
