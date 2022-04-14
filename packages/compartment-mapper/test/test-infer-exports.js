@@ -59,7 +59,7 @@ const cases = [
       './underscore*': './underscore*',
       './modules/*': {
         require: './cjs/*',
-        default: './modules/*', // this line seems plain wrong. https://github.com/jashkenas/underscore/issues/2954
+        default: './modules/*',
       },
       './amd/*': './amd/*',
       './cjs/*': './cjs/*',

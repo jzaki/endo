@@ -5,7 +5,7 @@
 import { join, relativize } from './node-module-specifier.js';
 
 const { entries, fromEntries } = Object;
-const { isArray } = Array;
+const { isArray, from } = Array;
 
 /**
  * @param {string} name - the name of the referrer package.
@@ -34,14 +34,13 @@ function* interpretBrowserExports(name, exports) {
  * for selecting relevant exports, e.g., "browser" or "node".
  * @param {Record<string, Language>} types - an object to populate
  * with any recognized module's type, if implied by a tag in the nested structure.
- * @param {Language} [assignType] - a type to assign when yielding a pair
  * @yields {[string, string]}
  */
-function* interpretExports(name, exports, tags, types, assignType) {
+function* interpretExports(name, exports, tags, types) {
   if (isArray(exports)) {
     for (const section of exports) {
       const results = [
-        ...interpretExports(name, section, tags, types, assignType),
+        ...interpretExports(name, section, tags, types),
       ];
       if (results.length > 0) {
         yield* results;
@@ -51,9 +50,6 @@ function* interpretExports(name, exports, tags, types, assignType) {
   }
   if (typeof exports === 'string') {
     const relative = relativize(exports);
-    if (assignType) {
-      types[relative] = assignType;
-    }
     yield [name, relative];
     return;
   }
@@ -64,10 +60,9 @@ function* interpretExports(name, exports, tags, types, assignType) {
   }
   for (const [key, value] of entries(exports)) {
     if (key.startsWith('./') || key === '.') {
-      yield* interpretExports(join(name, key), value, tags, types, assignType);
+      yield* interpretExports(join(name, key), value, tags, types);
     } else if (tags.has(key)) {
-      const toAssign = key === 'import' ? 'mjs' : assignType;
-      yield* interpretExports(name, value, tags, types, toAssign);
+      yield* interpretExports(name, value, tags, types);
     }
   }
 }

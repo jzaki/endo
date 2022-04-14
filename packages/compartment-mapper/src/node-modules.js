@@ -269,15 +269,35 @@ const graphPackage = async (
   /** @type {Record<string, Language>} */
   const types = {};
 
+  const readDescriptorUpwards = async path => {
+    const pathSegments = path.split('/');
+    let desc;
+    do {
+      desc = await readDescriptor(
+        resolveLocation(pathSegments.join('/'), packageLocation),
+      );
+      pathSegments.pop();
+    } while (!desc && pathSegments.length !== 0);
+
+    return desc;
+  };
+
   Object.assign(result, {
     name,
     label: `${name}${version ? `-v${version}` : ''}`,
     explicit: exports !== undefined,
-    exports: inferExports(packageDescriptor, tags, types),
+    exports: await inferExports(packageDescriptor, tags, types),
     dependencies,
     types,
     parsers: inferParsers(packageDescriptor, packageLocation),
   });
+
+  for (let item of values(result.exports)) {
+    const descriptor = await readDescriptorUpwards(item);
+    if (descriptor && descriptor.type === 'module') {
+      types[item] = 'mjs';
+    }
+  }
 
   await Promise.all(children);
   return undefined;
