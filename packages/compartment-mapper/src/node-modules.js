@@ -287,7 +287,7 @@ const graphPackage = async (
     name,
     label: `${name}${version ? `-v${version}` : ''}`,
     explicit: exports !== undefined,
-    exports: await inferExports(packageDescriptor, tags, types),
+    exports: inferExports(packageDescriptor, tags, types),
     dependencies,
     types,
     parsers: inferParsers(packageDescriptor, packageLocation),

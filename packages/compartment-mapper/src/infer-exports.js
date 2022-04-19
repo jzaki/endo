@@ -32,14 +32,12 @@ function* interpretBrowserExports(name, exports) {
  * @param {Object} exports - the `exports` field from a package.json.
  * @param {Set<string>} tags - build tags about the target environment
  * for selecting relevant exports, e.g., "browser" or "node".
- * @param {Record<string, Language>} types - an object to populate
- * with any recognized module's type, if implied by a tag in the nested structure.
  * @yields {[string, string]}
  */
-function* interpretExports(name, exports, tags, types) {
+function* interpretExports(name, exports, tags) {
   if (isArray(exports)) {
     for (const section of exports) {
-      const results = [...interpretExports(name, section, tags, types)];
+      const results = [...interpretExports(name, section, tags)];
       if (results.length > 0) {
         yield* results;
         break;
@@ -47,8 +45,7 @@ function* interpretExports(name, exports, tags, types) {
     }
   }
   if (typeof exports === 'string') {
-    const relative = relativize(exports);
-    yield [name, relative];
+    yield [name, relativize(exports)];
     return;
   }
   if (Object(exports) !== exports) {
@@ -58,9 +55,9 @@ function* interpretExports(name, exports, tags, types) {
   }
   for (const [key, value] of entries(exports)) {
     if (key.startsWith('./') || key === '.') {
-      yield* interpretExports(join(name, key), value, tags, types);
+      yield* interpretExports(join(name, key), value, tags);
     } else if (tags.has(key)) {
-      yield* interpretExports(name, value, tags, types);
+      yield* interpretExports(name, value, tags);
     }
   }
 }
@@ -108,7 +105,7 @@ export const inferExportsEntries = function* inferExportsEntries(
     yield [name, relativize(main)];
   }
   if (exports !== undefined) {
-    yield* interpretExports(name, exports, tags, types);
+    yield* interpretExports(name, exports, tags);
   }
   // TODO Otherwise, glob 'files' for all '.js', '.cjs', and '.mjs' entry
   // modules, taking care to exclude node_modules.
