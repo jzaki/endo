@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.2.25](https://github.com/endojs/endo/compare/@endo/cjs-module-analyzer@0.2.24...@endo/cjs-module-analyzer@0.2.25) (2022-04-15)
+
+**Note:** Version bump only for package @endo/cjs-module-analyzer
+
+
+
+
+
+### [0.2.24](https://github.com/endojs/endo/compare/@endo/cjs-module-analyzer@0.2.23...@endo/cjs-module-analyzer@0.2.24) (2022-04-14)
+
+**Note:** Version bump only for package @endo/cjs-module-analyzer
+
+
+
+
+
+### [0.2.23](https://github.com/endojs/endo/compare/@endo/cjs-module-analyzer@0.2.22...@endo/cjs-module-analyzer@0.2.23) (2022-04-13)
+
+
+### Bug Fixes
+
+* Revert dud release ([c8a7101](https://github.com/endojs/endo/commit/c8a71017d8d7af10a97909c9da9c5c7e59aed939))
+
+
+
+### [0.2.22](https://github.com/endojs/endo/compare/@endo/cjs-module-analyzer@0.2.21...@endo/cjs-module-analyzer@0.2.22) (2022-04-12)
+
+
+### Features
+
+* **compartment-mapper:** defer import errors based on parser support declaration ([cf074aa](https://github.com/endojs/endo/commit/cf074aab007a3af16ad7ac25b6dc1bd119d6d1b7))
+
+
+### Bug Fixes
+
+* **cjs-module-analyzer:** accept any require, not just top level ([7dfc183](https://github.com/endojs/endo/commit/7dfc183b859528de3abb7eade250913ade95455e))
+
+
+
 ### [0.2.21](https://github.com/endojs/endo/compare/@endo/cjs-module-analyzer@0.2.20...@endo/cjs-module-analyzer@0.2.21) (2022-03-07)
 
 **Note:** Version bump only for package @endo/cjs-module-analyzer

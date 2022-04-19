@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.1.26](https://github.com/endojs/endo/compare/@endo/test262-runner@0.1.25...@endo/test262-runner@0.1.26) (2022-04-15)
+
+**Note:** Version bump only for package @endo/test262-runner
+
+
+
+
+
+### [0.1.25](https://github.com/endojs/endo/compare/@endo/test262-runner@0.1.24...@endo/test262-runner@0.1.25) (2022-04-14)
+
+**Note:** Version bump only for package @endo/test262-runner
+
+
+
+
+
+### [0.1.24](https://github.com/endojs/endo/compare/@endo/test262-runner@0.1.23...@endo/test262-runner@0.1.24) (2022-04-13)
+
+
+### Bug Fixes
+
+* Revert dud release ([c8a7101](https://github.com/endojs/endo/commit/c8a71017d8d7af10a97909c9da9c5c7e59aed939))
+
+
+
+### [0.1.23](https://github.com/endojs/endo/compare/@endo/test262-runner@0.1.22...@endo/test262-runner@0.1.23) (2022-04-12)
+
+**Note:** Version bump only for package @endo/test262-runner
+
+
+
+
+
 ### [0.1.22](https://github.com/endojs/endo/compare/@endo/test262-runner@0.1.21...@endo/test262-runner@0.1.22) (2022-03-07)
 
 **Note:** Version bump only for package @endo/test262-runner

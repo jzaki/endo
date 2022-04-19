@@ -1,9 +1,17 @@
 {
   "name": "@endo/bundle-source",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Create source bundles from ES Modules",
   "type": "module",
   "main": "src/index.js",
+  "bin": {
+    "bundle-source": "./src/tool.js"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./exported.js": "./exported.js",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "exit 0",
     "test": "ava",
@@ -19,18 +27,19 @@
     "@agoric/babel-generator": "^7.17.4",
     "@babel/parser": "^7.17.3",
     "@babel/traverse": "^7.17.3",
-    "@endo/base64": "^0.2.21",
-    "@endo/compartment-mapper": "^0.7.1",
+    "@endo/base64": "^0.2.25",
+    "@endo/compartment-mapper": "^0.7.5",
+    "@endo/init": "^0.5.41",
     "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "acorn": "^8.2.4",
-    "rollup": "^2.47.0",
+    "rollup": "endojs/endo#rollup-2.7.1-patch-1",
     "source-map": "^0.7.3"
   },
   "devDependencies": {
-    "@endo/init": "^0.5.37",
-    "@endo/lockdown": "^0.1.9",
-    "@endo/ses-ava": "^0.2.21",
+    "@endo/init": "^0.5.40",
+    "@endo/lockdown": "^0.1.13",
+    "@endo/ses-ava": "^0.2.25",
     "ava": "^3.12.1",
     "c8": "^7.7.3"
   },
@@ -38,6 +47,7 @@
   "files": [
     "LICENSE*",
     "SECURITY*",
+    "rollup-*.tgz",
     "src",
     "*.js",
     "*.ts"

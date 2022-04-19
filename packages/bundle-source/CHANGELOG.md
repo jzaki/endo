@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.0](https://github.com/endojs/endo/compare/@endo/bundle-source@2.1.4...@endo/bundle-source@2.2.0) (2022-04-15)
+
+
+### Features
+
+* **bundle-source:** CLI tool with caching ([#1160](https://github.com/endojs/endo/issues/1160)) ([05fdfb5](https://github.com/endojs/endo/commit/05fdfb50861e747df9e40d71382b31ce78c48e72))
+
+
+### Bug Fixes
+
+* **bundle-source:** Limit public API to intentionally exported modules ([eabb877](https://github.com/endojs/endo/commit/eabb8771eb9309f19dbd7644ef795b85055abe81))
+
+
+
+### [2.1.4](https://github.com/endojs/endo/compare/@endo/bundle-source@2.1.3...@endo/bundle-source@2.1.4) (2022-04-14)
+
+
+### Bug Fixes
+
+* **bundle-source:** Use a github reference instead of a bundled tarball for rollup patch ([1bf0c18](https://github.com/endojs/endo/commit/1bf0c187e04bfe015850a91d51a33074aeebfde4))
+
+
+
+### [2.1.3](https://github.com/endojs/endo/compare/@endo/bundle-source@2.1.2...@endo/bundle-source@2.1.3) (2022-04-13)
+
+
+### Bug Fixes
+
+* Revert dud release ([c8a7101](https://github.com/endojs/endo/commit/c8a71017d8d7af10a97909c9da9c5c7e59aed939))
+
+
+
+### [2.1.2](https://github.com/endojs/endo/compare/@endo/bundle-source@2.1.1...@endo/bundle-source@2.1.2) (2022-04-12)
+
+**Note:** Version bump only for package @endo/bundle-source
+
+
+
+
+
 ### [2.1.1](https://github.com/endojs/endo/compare/@endo/bundle-source@2.1.0...@endo/bundle-source@2.1.1) (2022-03-07)
 
 **Note:** Version bump only for package @endo/bundle-source

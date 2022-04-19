@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.15.3](https://github.com/endojs/endo/compare/@endo/eventual-send@0.15.2...@endo/eventual-send@0.15.3) (2022-04-15)
+
+**Note:** Version bump only for package @endo/eventual-send
+
+
+
+
+
+### [0.15.2](https://github.com/endojs/endo/compare/@endo/eventual-send@0.15.1...@endo/eventual-send@0.15.2) (2022-04-14)
+
+**Note:** Version bump only for package @endo/eventual-send
+
+
+
+
+
+### [0.15.1](https://github.com/endojs/endo/compare/@endo/eventual-send@0.15.0...@endo/eventual-send@0.15.1) (2022-04-13)
+
+
+### Bug Fixes
+
+* Revert dud release ([c8a7101](https://github.com/endojs/endo/commit/c8a71017d8d7af10a97909c9da9c5c7e59aed939))
+
+
+
+## [0.15.0](https://github.com/endojs/endo/compare/@endo/eventual-send@0.14.8...@endo/eventual-send@0.15.0) (2022-04-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **far:** rename `Remote` to `FarRef`
+
+### Features
+
+* **far:** rename `Remote` to `FarRef` ([7bde2bf](https://github.com/endojs/endo/commit/7bde2bf28e88935606564cebd1b8d284cd70e4ef))
+
+
+### Bug Fixes
+
+* **eventual-send:** evolve types based on marshal requirements ([ff388fa](https://github.com/endojs/endo/commit/ff388fa2f81446c1ae02618b78771dc17ce5c74b))
+* **eventual-send:** unwrap promises more fully ([6ba799f](https://github.com/endojs/endo/commit/6ba799f77e8d55530ecd7617c3ccad22324bade2))
+
+
+
 ### [0.14.8](https://github.com/endojs/endo/compare/@endo/eventual-send@0.14.7...@endo/eventual-send@0.14.8) (2022-03-07)
 
 

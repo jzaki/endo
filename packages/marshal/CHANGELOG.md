@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.6.7](https://github.com/endojs/endo/compare/@endo/marshal@0.6.6...@endo/marshal@0.6.7) (2022-04-15)
+
+**Note:** Version bump only for package @endo/marshal
+
+
+
+
+
+### [0.6.6](https://github.com/endojs/endo/compare/@endo/marshal@0.6.5...@endo/marshal@0.6.6) (2022-04-14)
+
+**Note:** Version bump only for package @endo/marshal
+
+
+
+
+
+### [0.6.5](https://github.com/endojs/endo/compare/@endo/marshal@0.6.4...@endo/marshal@0.6.5) (2022-04-13)
+
+
+### Bug Fixes
+
+* Revert dud release ([c8a7101](https://github.com/endojs/endo/commit/c8a71017d8d7af10a97909c9da9c5c7e59aed939))
+
+
+
+### [0.6.4](https://github.com/endojs/endo/compare/@endo/marshal@0.6.3...@endo/marshal@0.6.4) (2022-04-12)
+
+
+### Features
+
+* **marshal:** stamp Remotable return with `RemotableBrand<L,R>` ([8b9b8fd](https://github.com/endojs/endo/commit/8b9b8fd9b1f40c22b1b9ddef46569db81dd7bff6))
+
+
+
 ### [0.6.3](https://github.com/endojs/endo/compare/@endo/marshal@0.6.2...@endo/marshal@0.6.3) (2022-03-07)
 
 
