@@ -273,6 +273,7 @@ const graphPackage = async (
     const pathSegments = path.split('/');
     let desc;
     do {
+      // eslint-disable-next-line no-await-in-loop
       desc = await readDescriptor(
         resolveLocation(pathSegments.join('/'), packageLocation),
       );
@@ -292,12 +293,14 @@ const graphPackage = async (
     parsers: inferParsers(packageDescriptor, packageLocation),
   });
 
-  for (let item of values(result.exports)) {
-    const descriptor = await readDescriptorUpwards(item);
-    if (descriptor && descriptor.type === 'module') {
-      types[item] = 'mjs';
-    }
-  }
+  await Promise.all(
+    values(result.exports).map(async item => {
+      const descriptor = await readDescriptorUpwards(item);
+      if (descriptor && descriptor.type === 'module') {
+        types[item] = 'mjs';
+      }
+    }),
+  );
 
   await Promise.all(children);
   return undefined;

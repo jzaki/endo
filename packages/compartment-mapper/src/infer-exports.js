@@ -5,7 +5,7 @@
 import { join, relativize } from './node-module-specifier.js';
 
 const { entries, fromEntries } = Object;
-const { isArray, from } = Array;
+const { isArray } = Array;
 
 /**
  * @param {string} name - the name of the referrer package.
@@ -39,9 +39,7 @@ function* interpretBrowserExports(name, exports) {
 function* interpretExports(name, exports, tags, types) {
   if (isArray(exports)) {
     for (const section of exports) {
-      const results = [
-        ...interpretExports(name, section, tags, types),
-      ];
+      const results = [...interpretExports(name, section, tags, types)];
       if (results.length > 0) {
         yield* results;
         break;
